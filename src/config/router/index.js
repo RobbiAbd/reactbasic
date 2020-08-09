@@ -1,25 +1,32 @@
 import React from "react";
 import {
+  HomeOutlined,
+  ContactsOutlined,
   UserOutlined,
-  UploadOutlined,
-  VideoCameraOutlined,
 } from "@ant-design/icons";
+
+import Home from "../../container/layout/pages/Home";
+import Contact from "../../container/layout/pages/Contact";
+import Profile from "../../container/layout/pages/Profile";
 
 const pageRoutes = [
   {
-    icon: <UserOutlined />,
-    name: "Users",
+    icon: <HomeOutlined />,
+    name: "Home",
     path: "/",
+    component: Home,
   },
   {
-    icon: <VideoCameraOutlined />,
-    name: "Video",
+    icon: <UserOutlined />,
+    name: "Profile",
     path: "/profile",
+    component: Profile,
   },
   {
-    icon: <UploadOutlined />,
-    name: "Upload",
+    icon: <ContactsOutlined />,
+    name: "Contact",
     path: "/contact",
+    component: Contact,
   },
 ];
 

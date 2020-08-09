@@ -41,15 +41,20 @@ const Dashboard = () => {
             style={{ padding: 24, minHeight: 360 }}
           >
             <Switch>
-              <Route exact path="/" component={() => "Home"} />
-              <Route path="/profile" component={() => "Profile"} />
-              <Route path="/contact" component={() => "Contact"} />
+              {pageRoutes.map((data, i) => {
+                return (
+                  <Route
+                    exact
+                    key={i}
+                    path={data.path}
+                    component={data.component}
+                  />
+                );
+              })}
             </Switch>
           </div>
         </Content>
-        <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2018 Created by Ant UED
-        </Footer>
+        <Footer style={{ textAlign: "center" }}>Robbi Abdul Rohman</Footer>
       </Layout>
     </Layout>
   );
