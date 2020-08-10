@@ -3,11 +3,13 @@ import {
   HomeOutlined,
   ContactsOutlined,
   UserOutlined,
+  VideoCameraOutlined,
 } from "@ant-design/icons";
 
 import Home from "../../container/layout/pages/Home";
 import Contact from "../../container/layout/pages/Contact";
 import Profile from "../../container/layout/pages/Profile";
+import Movie from "../../container/layout/pages/Movie";
 
 const pageRoutes = [
   {
@@ -27,6 +29,12 @@ const pageRoutes = [
     name: "Contact",
     path: "/contact",
     component: Contact,
+  },
+  {
+    icon: <VideoCameraOutlined />,
+    name: "Movie",
+    path: "/movie",
+    component: Movie,
   },
 ];
 
