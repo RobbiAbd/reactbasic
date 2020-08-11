@@ -18,7 +18,10 @@ const Movie = () => {
 
   const getMovies = async (key) => {
     await axios
-      .get("http://www.omdbapi.com/?i=tt3896198&apikey=9d1ecc6c&s=" + key)
+      .get(
+        "https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?i=tt3896198&apikey=9d1ecc6c&s=" +
+          key
+      )
       .then((data) => setMovies(data.data.Search))
       .catch((err) => {
         throw new Error(err);
