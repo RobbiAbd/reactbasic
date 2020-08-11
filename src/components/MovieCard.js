@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Card, Col, Row, Avatar } from "antd";
+import { Card, Col, Row } from "antd";
 
 import {
   EditOutlined,
@@ -19,7 +19,13 @@ const MovieCard = (props) => {
             <Col key={i} xl={{ span: 8 }}>
               <Card
                 title={movie.Type}
-                cover={<img alt="example" src={movie.Poster} />}
+                cover={
+                  <img
+                    alt="example"
+                    src={movie.Poster}
+                    style={{ height: "500px" }}
+                  />
+                }
                 bordered={false}
                 actions={[
                   <SettingOutlined key="setting" />,
@@ -27,13 +33,7 @@ const MovieCard = (props) => {
                   <EllipsisOutlined key="ellipsis" />,
                 ]}
               >
-                <Meta
-                  avatar={
-                    <Avatar src="https://avatars1.githubusercontent.com/u/42019007?s=460&u=d12157817ce2c4795d2d040644a9077edf9acaa6&v=4" />
-                  }
-                  title={movie.Title}
-                  description="This is the description"
-                />
+                <Meta title={movie.Title} />
               </Card>
             </Col>
           );
