@@ -1,60 +1,197 @@
 import React, { useState } from "react";
-import pageRoutes from "../../../config/router";
-
-import { Switch, Route, Link } from "react-router-dom";
-
 import "./style.css";
+import ResponsiveAntMenu from "responsive-ant-menu";
+import { Layout, Menu, Drawer } from "antd";
 
-import { Layout, Menu, Breadcrumb } from "antd";
+import {
+  MenuOutlined,
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
+} from "@ant-design/icons";
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Footer } = Layout;
 
 const Dashboard = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [visible, setVisible] = useState(false);
 
-  const onCollapse = () => {
-    setCollapsed(!collapsed);
+  const showDrawer = () => {
+    setVisible({
+      visible: true,
+    });
+  };
+
+  const closeDrawer = () => {
+    setVisible(false);
   };
 
   return (
-    <Layout style={{ minHeight: "100vh" }}>
-      <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-        <div className="logo" />
-        <Menu theme="dark" defaultSelectedKeys={["0"]} mode="inline">
-          {pageRoutes.map((data, i) => {
-            return (
-              <Menu.Item key={i} icon={data.icon}>
-                <Link to={data.path}>{data.name}</Link>
-              </Menu.Item>
-            );
-          })}
-        </Menu>
-      </Sider>
-      <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }} />
-        <Content style={{ margin: "0 16px" }}>
-          <Breadcrumb style={{ margin: "16px 0" }}>
-            <Breadcrumb.Item>Dashboard / </Breadcrumb.Item>
-          </Breadcrumb>
+    <Layout className="layout">
+      <Drawer
+        title="Basic Drawer"
+        placement="left"
+        closable={false}
+        visible={visible}
+        getContainer={false}
+        style={{ position: "absolute" }}
+      >
+        <MenuFoldOutlined
+          style={{
+            fontSize: "21px",
+          }}
+          onClick={closeDrawer}
+        />
+      </Drawer>
+      <Layout>
+        <Header className="header">
+          <div className="logo" />
+          <MenuUnfoldOutlined
+            style={{
+              color: "white",
+              fontSize: "21px",
+            }}
+            onClick={showDrawer}
+          />
+          <ResponsiveAntMenu
+            activeLinkKey=""
+            mobileMenuContent={(isMenuShown) =>
+              isMenuShown ? (
+                <MenuOutlined
+                  spin={true}
+                  style={{
+                    color: "white",
+                    fontSize: "21px",
+                    marginLeft: "61px",
+                  }}
+                />
+              ) : (
+                <MenuOutlined
+                  spin={false}
+                  style={{
+                    color: "white",
+                    fontSize: "21px",
+                    marginLeft: "61px",
+                  }}
+                />
+              )
+            }
+            menuClassName={"responsive-ant-menu"}
+            theme="dark"
+            mode="horizontal"
+          >
+            {(onLinkClick) => (
+              <Menu style={{ float: "right" }}>
+                <Menu.Item key="1">nav 1</Menu.Item>
+                <Menu.Item key="2">nav 2</Menu.Item>
+                <Menu.Item key="3">nav 3</Menu.Item>
+              </Menu>
+            )}
+          </ResponsiveAntMenu>
+        </Header>
+        <Content style={{ margin: "24px 16px 0" }}>
           <div
             className="site-layout-background"
             style={{ padding: 24, minHeight: 360 }}
           >
-            <Switch>
-              {pageRoutes.map((data, i) => {
-                return (
-                  <Route
-                    exact
-                    key={i}
-                    path={data.path}
-                    component={data.component}
-                  />
-                );
-              })}
-            </Switch>
+            ...
+            <br />
+            Really
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            long
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            ...
+            <br />
+            content
           </div>
         </Content>
-        <Footer style={{ textAlign: "center" }}>Robbi Abdul Rohman</Footer>
+        <Footer style={{ textAlign: "center" }}>
+          Ant Design ©2018 Created by Ant UED
+        </Footer>
       </Layout>
     </Layout>
   );
