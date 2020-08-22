@@ -1,11 +1,10 @@
 import React from "react";
-import "./style.css";
 import "../layout.css";
 
 import { Layout } from "antd";
 const { Content } = Layout;
 
-const Dashboard = () => {
+const Profile = () => {
   return (
     <>
       <Content style={{ margin: "24px 16px 0" }}>
@@ -13,11 +12,11 @@ const Dashboard = () => {
           className="site-layout-background"
           style={{ padding: 24, minHeight: 360 }}
         >
-          content
+          profile
         </div>
       </Content>
     </>
   );
 };
 
-export default Dashboard;
+export default Profile;

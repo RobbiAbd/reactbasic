@@ -1,22 +1,14 @@
 import React from "react";
-import {
-  HomeOutlined,
-  ContactsOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
+import { DashboardOutlined, UserOutlined } from "@ant-design/icons";
+import Dashboard from "../../container/layout/Dashboard";
+import Profile from "../../container/layout/Profile";
 
-import Home from "../../container/layout/pages/Home";
-import Contact from "../../container/layout/pages/Contact";
-import Profile from "../../container/layout/pages/Profile";
-import Movie from "../../container/layout/pages/Movie";
-
-const pageRoutes = [
+export const pageRoutes = [
   {
-    icon: <HomeOutlined />,
-    name: "Home",
+    icon: <DashboardOutlined />,
+    name: "Dashboard",
     path: "/",
-    component: Home,
+    component: Dashboard,
   },
   {
     icon: <UserOutlined />,
@@ -24,18 +16,4 @@ const pageRoutes = [
     path: "/profile",
     component: Profile,
   },
-  {
-    icon: <ContactsOutlined />,
-    name: "Contact",
-    path: "/contact",
-    component: Contact,
-  },
-  {
-    icon: <VideoCameraOutlined />,
-    name: "Movie",
-    path: "/movie",
-    component: Movie,
-  },
 ];
-
-export default pageRoutes;
