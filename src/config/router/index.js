@@ -13,7 +13,7 @@ export const pageRoutes = [
   {
     icon: <UserOutlined />,
     name: "Profile",
-    path: "/profile",
+    path: "/admin/profile",
     component: Profile,
   },
 ];

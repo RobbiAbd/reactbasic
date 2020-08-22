@@ -2,12 +2,13 @@ import React from "react";
 
 import ResponsiveAntMenu from "responsive-ant-menu";
 
-import { Layout, Menu, Avatar } from "antd";
+import { Layout, Menu, Avatar, Badge } from "antd";
 import {
   MenuOutlined,
   MenuUnfoldOutlined,
   UserOutlined,
   BellOutlined,
+  NotificationOutlined,
 } from "@ant-design/icons";
 
 import { useRecoilState } from "recoil";
@@ -70,9 +71,13 @@ const Navbar = () => {
         >
           {(onLinkClick) => (
             <Menu style={{ float: "right" }}>
-              <Menu.Item key="1">nav 1</Menu.Item>
+              <Menu.Item key="1">
+                <Badge count={5} dot>
+                  <NotificationOutlined style={{ fontSize: "18px" }} />
+                </Badge>
+              </Menu.Item>
               <Menu.Item key="2">
-                <BellOutlined />
+                <BellOutlined style={{ fontSize: "20px" }} />
               </Menu.Item>
               <Menu.Item key="3">
                 <Avatar
