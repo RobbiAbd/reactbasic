@@ -20,7 +20,9 @@ const Navbar = () => {
   const [visible, setVisible] = useRecoilState(visibleDrawer);
 
   const showDrawer = () => {
-    setVisible(true);
+    setVisible({
+      visible: !visible,
+    });
   };
 
   return (
